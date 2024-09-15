@@ -94,7 +94,7 @@ restaurant.orderPasta(...ingredients);
 const otherRestaurante = { stars: 5, ...restaurant, founder: "Elder" };
 console.log(otherRestaurante);
 
-//THE BEST WAY TO COPY A OBJECT
+//THE BEST WAY TO COPY A OBJECT, USING THE SPREAD OPERATOR
 const copyObject = { ...restaurant };
 copyObject.name = "Atlanta pizza";
 console.log(restaurant.name, copyObject.name);
