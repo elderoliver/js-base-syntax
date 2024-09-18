@@ -20,6 +20,10 @@ const restaurant = {
     console.log("Order Pasta method: ", ing1, ing2, ing3);
   },
 
+  orderPizza: function (mainingredient, ...otherIngredients) {
+    console.log(mainingredient, otherIngredients);
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -36,73 +40,11 @@ const restaurant = {
   },
 };
 
-// Destructuring objects
-const { name } = restaurant;
-const { name: restaurantName } = restaurant;
-console.log(name);
-console.log(restaurantName);
-
-//Declaring default values for objects
-const { menuV = ["item does not exist in the object"], name: restName } =
-  restaurant;
-
-console.log(menuV, restName);
-
-//mutating variables
-let a = 111;
-let b = 999;
-
-const obj = { a: 24, b: 2, c: 55 };
-
-({ a, b } = obj);
-
-console.log(a, b);
-
-//Nested Objects
-const { openingHours } = restaurant;
-const {
-  fri: { open, close },
-} = openingHours;
-
-console.log(open, close);
-
-//The Spread operator
-const arr = [7, 8, 9];
-const newArray = [1, 2, ...arr];
-console.log(newArray);
-
-const newMenu = [...restaurant.mainMenu, "Hotdog"];
-console.log(newMenu);
-
-const mainMenuCopy = [...restaurant.mainMenu];
-
-const menu = [...mainMenuCopy, ...restaurant.starterMenu];
-
-console.log(menu);
-
-//Iterables are arrays, strings, maps, sets NOT OBJECTS
-const str = "Elder";
-const arrOfmyStr = [...str, " ", ..."Oliveira"];
-console.log(arrOfmyStr);
-
-const ingredients = ["ketchup", "mostarda", "salad"];
-
-restaurant.orderPasta(...ingredients);
-
-//spread operator with objects
-//creating a brand new object
-const otherRestaurante = { stars: 5, ...restaurant, founder: "Elder" };
-console.log(otherRestaurante);
-
-//THE BEST WAY TO COPY A OBJECT, USING THE SPREAD OPERATOR
-const copyObject = { ...restaurant };
-copyObject.name = "Atlanta pizza";
-console.log(restaurant.name, copyObject.name);
+/*
+ * Destructuring arrays
+ */
 
 /*
-//Destructuring arrays
-
-
 // Destructuring an array
 const arr = [1, 2, 3];
 const [a, b, c] = arr;
@@ -132,3 +74,109 @@ const [q, w, r = "this item does not exist on the array"] = ["item1", "item2"];
 console.log(q, w, r);
 
 */
+
+/*
+ * fin Destructuring arrays
+ */
+
+/*
+ * Destructuring objects
+ */
+const { name } = restaurant;
+const { name: restaurantName } = restaurant;
+console.log(name);
+console.log(restaurantName);
+
+//Declaring default values for objects
+const { menuV = ["item does not exist in the object"], name: restName } =
+  restaurant;
+
+console.log(menuV, restName);
+
+/*
+ * Fin Destructuring objects
+ */
+
+//mutating variables
+let a = 111;
+let b = 999;
+
+const obj = { a: 24, b: 2, c: 55 };
+
+({ a, b } = obj);
+
+console.log(a, b);
+
+//Nested Objects
+const { openingHours } = restaurant;
+const {
+  fri: { open, close },
+} = openingHours;
+
+console.log(open, close);
+
+/*
+ * The Spread operator
+ */
+//The Spread operator, it's on the right side
+const arr = [7, 8, 9];
+const newArray = [1, 2, ...arr];
+console.log(newArray);
+
+const newMenu = [...restaurant.mainMenu, "Hotdog"];
+console.log(newMenu);
+
+const mainMenuCopy = [...restaurant.mainMenu];
+
+const menu = [...mainMenuCopy, ...restaurant.starterMenu];
+
+console.log(menu);
+
+//Iterables are arrays, strings, maps, sets NOT OBJECTS
+const str = "Elder";
+const arrOfmyStr = [...str, " ", ..."Oliveira"];
+console.log(arrOfmyStr);
+
+const ingredients = ["ketchup", "mostarda", "salad"];
+restaurant.orderPasta(...ingredients);
+
+//spread operator with objects
+//creating a brand new object
+const otherRestaurante = { stars: 5, ...restaurant, founder: "Elder" };
+console.log(otherRestaurante);
+
+//THE BEST WAY TO COPY A OBJECT, USING THE SPREAD OPERATOR
+const copyObject = { ...restaurant };
+copyObject.name = "Atlanta pizza";
+console.log(restaurant.name, copyObject.name);
+
+/*
+ * FIN Spread operator
+ */
+
+/*
+ * The REST operator
+ */
+//REST because it's on the left side of the DESTRUCTURING STATEMENT
+const [y, u, ...others] = [1, 2, 3, 4, 5, 6, 7, 8];
+console.log(y, u, others);
+
+const { sat: saturday, ...weekDays } = openingHours;
+console.log(saturday, weekDays);
+
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(`The sum of the array is ${sum}!!!`);
+};
+
+add(1, 2, 3);
+add(77, 88, 0, 88, 1, 2);
+
+restaurant.orderPizza("mushrooms", "onion", "olives", "spinach");
+
+/*
+ *  FIN The REST operator
+ */
