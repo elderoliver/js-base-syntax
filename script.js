@@ -205,3 +205,76 @@ console.log(undefined && "oliveira" && "Elder");
 person.numberOfSuns = 0;
 const numberOfSuns = person.numberOfSuns ?? "invalid";
 console.log(numberOfSuns);
+
+const life = {
+  jobSkils: "Java, SQL, Delphi, C#",
+  savedMoney: 1000000,
+};
+
+/*
+ *  SHORT CIRCUITING - Logical Assignment Operators
+ * Operators && AND || and ??
+ */
+
+//life.jobSkils = life.jobSkils || "nothing I have to study";
+life.jobSkils ||= "nothing I have to study";
+//life.savedMoney = life.savedMoney && "this property was hidden";
+life.savedMoney &&= "this property was hidden";
+
+console.log(life);
+
+/*
+ *  Looping arrays
+ *
+ */
+
+//for of loop
+const mainMenu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+for (const item of mainMenu) console.log("Example of looping arrays  ", item);
+
+//if I need to get the index of an array.
+for (const item of mainMenu.entries()) console.log(item);
+
+for (const [index, item] of mainMenu.entries()) console.log(index, item);
+
+/*
+ *  Enhanced Object Literals
+ *
+ */
+const object1 = { key: "value" };
+
+const example = {
+  item1: "testing",
+  object1,
+  hello() {
+    console.log("hello");
+  },
+};
+
+console.log(example);
+
+example.hello();
+
+/*
+ *  Optional chaining
+ *
+ */
+
+//With Optional chaining I can verify if some property exist
+//without having JS trowing an error
+console.log(restaurant.openingHours.mon?.open);
+
+const optionalChaining = {
+  key1: "value1",
+  hello: function hello() {
+    return "Hello";
+  },
+};
+
+console.log(optionalChaining.hello?.() ?? "This method does not exist");
+
+//arrays
+const users = [{ name: "elder", mail: "elder@test.com" }];
+
+console.log(users[0]?.name);
+console.log(users[1]?.name ?? `Name wasn't found`);
