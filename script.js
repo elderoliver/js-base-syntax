@@ -158,7 +158,7 @@ console.log(restaurant.name, copyObject.name);
  * The REST operator
  */
 //REST because it's on the left side of the DESTRUCTURING STATEMENT
-const [y, u, ...others] = [1, 2, 3, 4, 5, 6, 7, 8];
+const [y, u, ...others] = [1, 2, 3, 4, 5, 6, 7, "8"];
 console.log(y, u, others);
 
 const { sat: saturday, ...weekDays } = openingHours;
@@ -180,3 +180,28 @@ restaurant.orderPizza("mushrooms", "onion", "olives", "spinach");
 /*
  *  FIN The REST operator
  */
+
+/*
+ *  SHORT CIRCUITING
+ * Operators && AND || and ??
+ */
+
+const person = {
+  fname: "Elder",
+  lname: "Oliveira Castro",
+  age: 33,
+};
+
+console.log(person);
+
+// The OR operator will always return the first trueth value or simply the last value.
+const soccerTeam = person.soccerTeam || "Atletico Mineiro";
+console.log(soccerTeam);
+
+// The and operator will always return the falsy value or simply the last value
+console.log(undefined && "oliveira" && "Elder");
+
+// The nullish operator works the same way as the OR, but considering null and undefined values instead of falsy values.
+person.numberOfSuns = 0;
+const numberOfSuns = person.numberOfSuns ?? "invalid";
+console.log(numberOfSuns);
