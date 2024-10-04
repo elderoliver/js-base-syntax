@@ -278,3 +278,43 @@ const users = [{ name: "elder", mail: "elder@test.com" }];
 
 console.log(users[0]?.name);
 console.log(users[1]?.name ?? `Name wasn't found`);
+
+/*
+ *  Looping Objects
+ *
+ */
+
+//Looping trhogout the property names (keys)
+for (const day of Object.keys(openingHours)) console.log(day);
+
+//looping truhout the property values
+//Looping trhogout the property names (keys)
+for (const day of Object.values(openingHours)) console.log(day);
+
+//If I want both data key and values I can use Object.entries(objectName)
+for (const day of Object.entries(openingHours)) {
+  console.log(day);
+  console.log(day[1]);
+}
+
+/*
+ *  Creating SETS
+ *  SETS are a type of iterable which consists on a list of values
+ *  that cannot be repeated
+ */
+
+const setTest = new Set(["Elder", "Thiago", "Celso", "Elder", "Thiago"]);
+
+//setTest.clear();
+
+setTest.add("Lucas");
+//setTest.delete("Lucas");
+
+console.log(`The size of the Set: ${setTest.size} `);
+console.log(setTest.has("Elder") === true ? "Exist" : "Does not exist");
+
+//Converting a set into a array
+const newArrayBasedOnSet = [...setTest];
+
+console.log(setTest);
+console.log(newArrayBasedOnSet);
