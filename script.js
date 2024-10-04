@@ -318,3 +318,21 @@ const newArrayBasedOnSet = [...setTest];
 
 console.log(setTest);
 console.log(newArrayBasedOnSet);
+
+/*
+ *  Creating MAPs
+ *
+ *
+ */
+
+const mapTest = new Map();
+
+mapTest.set("name", "Elder").set(33, "age").set({ java: 5, sql: 5 }, "skills");
+
+console.log(mapTest.get(33));
+console.log(mapTest.size);
+//mapTest.delete("name");
+
+console.log(mapTest.has("name") === true ? "true" : "false");
+
+console.log(mapTest);
