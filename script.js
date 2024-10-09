@@ -336,3 +336,48 @@ console.log(mapTest.size);
 console.log(mapTest.has("name") === true ? "true" : "false");
 
 console.log(mapTest);
+
+const mapTest2 = new Map([
+  ["name", "Elder"],
+  ["lastName", "Oliveira Castro"],
+  ["age", 33],
+]);
+
+console.log(mapTest2);
+
+//How to convert a object into a map
+
+const myObjTest = {
+  name: "Elder",
+  surName: "Oliveira",
+  age: 33,
+};
+
+const mapBasedOnObject = new Map(Object.entries(myObjTest));
+console.log(myObjTest);
+console.log(mapBasedOnObject);
+
+for (const [index, value] of mapBasedOnObject) {
+  console.log(`Index ${index}, Value ${value}`);
+}
+
+//how to convert a map into a array
+const arr3 = [...mapBasedOnObject];
+console.log(arr3);
+
+/*
+ -- Working with String on Java Script
+
+*/
+
+const airline = "TAP Air Portugal";
+const plane = "A320";
+
+console.log(airline[0]);
+
+//indexOf function
+console.log(airline.indexOf("A")); // get the position of the first letter
+
+console.log(airline.lastIndexOf("A")); // get the position of the last letter
+
+console.log(airline.slice(1, 15));
