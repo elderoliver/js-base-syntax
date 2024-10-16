@@ -381,3 +381,36 @@ console.log(airline.indexOf("A")); // get the position of the first letter
 console.log(airline.lastIndexOf("A")); // get the position of the last letter
 
 console.log(airline.slice(1, 15));
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+//Replacing String
+const priceGB = "288,97";
+const priceUS = priceGB.replace(",", ".");
+const priceUSAll = priceGB.replaceAll(",", ".");
+console.log("priceUSAll", priceUSAll);
+
+//Booleans
+const myName = "Elder Oliveira Castro";
+
+console.log(myName.startsWith("e"));
+console.log(myName.endsWith("o"));
+
+console.log(myName.includes("Castro"));
+
+//Split method
+
+const strSplitExample = "Elder+Oliveira+Castro";
+const strSplitDone = strSplitExample.split("+", 3);
+console.log(strSplitDone);
+
+//Join method
+
+console.log(strSplitDone.join(" "));
+
+//Padding a string and end
+const message = "Go to gate 23!";
+console.log(message.padStart(50, "elder"));
+
+console.log(message.padEnd(50, "elder"));
