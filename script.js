@@ -414,3 +414,7 @@ const message = "Go to gate 23!";
 console.log(message.padStart(50, "elder"));
 
 console.log(message.padEnd(50, "elder"));
+
+//repeat function
+const strToRepeat = "Elder Oliveia Castro";
+console.log(strToRepeat.repeat(2));
